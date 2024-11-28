@@ -1,63 +1,71 @@
-2024/11/28 12:11:48 [notice] 47279#0: using the "epoll" event method
-2024/11/28 12:11:48 [notice] 47279#0: openresty/1.21.4.2
-2024/11/28 12:11:48 [notice] 47279#0: built by gcc 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
-2024/11/28 12:11:48 [notice] 47279#0: OS: Linux 5.15.167.4-microsoft-standard-WSL2
-2024/11/28 12:11:48 [notice] 47279#0: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-2024/11/28 12:11:48 [notice] 47280#0: start worker processes
-2024/11/28 12:11:48 [notice] 47280#0: start worker process 47281
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:18: m2: function: 0x7fd728f37a78, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: use(): append call: nil:function: 0x7fd728f37a78, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:25: view: function: 0x7fd728f37b60, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: append call: /hello/:number:function: 0x7fd728f37b60, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: get(): append call: /test:function: 0x7fd728f37e48, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: get(): append call: /test2:function: 0x7fd728f2d568, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:40: filter: function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: append call: =/:function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: append call: /xxx:function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:343: append call: /xxx1:function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:45: ***************router done: {
-  1     : [
-
-  ],
-  2     : {
-    1      : "function: 0x7fd728f37c80",
-    2      : "function: 0x7fd728f37e78",
-    3      : "function: 0x7fd728f38118",
-    "@home": "function: 0x7fd728f38458",
-    n      : 3,
+2024/11/28 17:43:17 [notice] 101803#0: using the "epoll" event method
+2024/11/28 17:43:17 [notice] 101803#0: openresty/1.21.4.2
+2024/11/28 17:43:17 [notice] 101803#0: built by gcc 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+2024/11/28 17:43:17 [notice] 101803#0: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2024/11/28 17:43:17 [notice] 101803#0: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/11/28 17:43:17 [notice] 101804#0: start worker processes
+2024/11/28 17:43:17 [notice] 101804#0: start worker process 101805
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:344: append call: =/kkkk:function: 0x7f7a94b07ab8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:344: use(): append call: nil:function: 0x7f7a94b07d38, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:26: m2: function: 0x7f7a94b07ea8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:344: use(): append call: nil:function: 0x7f7a94b07ea8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:33: view: function: 0x7f7a94afd4e0, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:344: append call: /hello/:number:function: 0x7f7a94afd4e0, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:344: get(): append call: /test:function: 0x7f7a94b08380, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:344: get(): append call: /test3:function: 0x7f7a94afd650, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:48: filter: function: 0x7f7a94b07ab8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:53: ***************router done: {
+  1     : {
+    404: "function: 0x7f7a94b088f8",
   },
-  3     : {
-    1: "function: 0x7fd728f37ff0",
-    2: "function: 0x7fd728f388a0",
-    3: "function: 0x7fd728f38b30",
+  2     : {
+    1: "function: 0x7f7a94b081b8",
+    2: "function: 0x7f7a94b083b0",
+    3: "function: 0x7f7a94b08630",
     n: 3,
   },
-  4     : {
-    1: "function: 0x7fd728f37ae8",
+  3     : {
+    1: "function: 0x7f7a94b07bc0",
     n: 1,
+  },
+  4     : {
+    1: "function: 0x7f7a94b07d68",
+    2: "function: 0x7f7a94b07f18",
+    n: 2,
   },
   filter: [
     {},
     {},
   ],
-}, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:248: locator create coroutine2: function: 0x7fd728f37a78, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:5: resume(): RESUME: thread: 0x7fd728f3bd90, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:9: 开始处理请求: /hello/2, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:242: locator create coroutine4: function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:242: locator create coroutine4: function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:242: locator create coroutine4: function: 0x7fd728f384f0, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:146: to(): router:to: unnamed route: /hello/2, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:242: locator create coroutine4: function: 0x7fd728f37b60, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:226: locator create coroutine3: function: 0x7fd728f37e48, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] route.lua:226: locator create coroutine3: function: 0x7fd728f2d568, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:5: resume(): RESUME: thread: 0x7fd728f3bd90, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 [lua] router.lua:16: 请求处理完成, 耗时: 0秒, client: 127.0.0.1, server: , request: "GET /hello/2 HTTP/1.1", host: "localhost:8080"
-2024/11/28 12:11:48 [info] 47281#0: *1 client 127.0.0.1 closed keepalive connection
-2024/11/28 12:11:48 [notice] 47285#0: signal process started
-2024/11/28 12:11:48 [notice] 47280#0: signal 15 (SIGTERM) received from 47285, exiting
-2024/11/28 12:11:48 [notice] 47281#0: exiting
-2024/11/28 12:11:48 [notice] 47281#0: exit
-2024/11/28 12:11:48 [notice] 47280#0: signal 17 (SIGCHLD) received from 47281
-2024/11/28 12:11:48 [notice] 47280#0: worker process 47281 exited with code 0
-2024/11/28 12:11:48 [notice] 47280#0: exit
+}{
+  404: "function: 0x7f7a94b088f8",
+}, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:142: to(): ⬛️⬛️中间件before, start: /test, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:249: locator create coroutine2: function: 0x7f7a94b07d38,thread: 0x7f7a94b0b8a8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:5: resume(): RESUME: thread: 0x7f7a94b0b8a8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:11: ⬛️M1中间件start: , client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:14: △M1中间件end: , client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:249: locator create coroutine2: function: 0x7f7a94b07ea8,thread: 0x7f7a94b0bbc0, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:5: resume(): RESUME: thread: 0x7f7a94b0bbc0, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:17: ⬛️M2中间件start: /test, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:145: to(): ⬛️⬛️中间件before,  end: /test, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:147: to(): ⬛️⬛️⬛️⬛️filter before,  start: /test, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:242: /kkkk△⬛️⬛️⬛️locator create coroutine for view: function: 0x7f7a94b07ab8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:149: to(): ⬛️⬛️⬛️⬛️filter before,  end: /test, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:154: to(): router:to: unnamed route: /test, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:242: /hello/:number△⬛️⬛️⬛️locator create coroutine for view: function: 0x7f7a94afd4e0, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:226: /test⬛️⬛️⬛️locator create coroutine for view2: function: 0x7f7a94b08380, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] route.lua:214: matcher create coroutine: function: 0x7f7a94b08380,thread: 0x7f7a94b0c5e8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:5: resume(): RESUME: thread: 0x7f7a94b0c5e8, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:87: process(): ⬛️⬛️中间件after, start: , client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:5: resume(): RESUME: thread: 0x7f7a94b0bbc0, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:24: △M2中间件end: 耗时: 0秒, client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 [lua] router.lua:95: process(): ⬛️⬛️中间件after, end: , client: 127.0.0.1, server: , request: "GET /test HTTP/1.1", host: "localhost:8080"
+2024/11/28 17:43:17 [info] 101805#0: *1 client 127.0.0.1 closed keepalive connection
+2024/11/28 17:43:17 [notice] 101809#0: signal process started
+2024/11/28 17:43:17 [notice] 101804#0: signal 15 (SIGTERM) received from 101809, exiting
+2024/11/28 17:43:17 [notice] 101805#0: exiting
+2024/11/28 17:43:17 [notice] 101805#0: exit
+2024/11/28 17:43:17 [notice] 101804#0: signal 17 (SIGCHLD) received from 101805
+2024/11/28 17:43:17 [notice] 101804#0: worker process 101805 exited with code 0
+2024/11/28 17:43:17 [notice] 101804#0: exit

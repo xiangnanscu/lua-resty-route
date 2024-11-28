@@ -76,6 +76,7 @@ local function finish(self, code, func, ...)
         f = t[-1]
       end
       if f then
+        ngx.log(ngx.ERR, "router:finish: ", code)
         local o, e = pcall(f, self.context, code)
         if not o then log(WARN, e) end
       end
@@ -83,6 +84,7 @@ local function finish(self, code, func, ...)
   end
   local f = self[1]
   local n = f.n
+  ngx.log(ngx.INFO, "⬛️⬛️中间件after, start: ")
   for i = n, 1, -1 do
     local t = f[i]
     f[i] = nil
@@ -90,11 +92,13 @@ local function finish(self, code, func, ...)
     local o, e = resume(t)
     if not o then log(WARN, e) end
   end
+  ngx.log(ngx.INFO, "⬛️⬛️中间件after, end: ")
   return func(...)
 end
 local router = { yield = yield }
 router.__index = router
 function router.new(...)
+  --1. suspended 协程 2. event listener 3. 视图函数  4. 过滤器 5. 中间件
   local self = setmetatable({ { n = 0 }, ... }, router)
   self.context = setmetatable({ route = self }, { __index = self })
   self.context.context = self.context
@@ -134,17 +138,21 @@ function router:to(location, method)
   method = method or "get"
   self.location = location
   self.method = method
-  if self[5] then
+  if self[5] then -- middlewares
+    ngx.log(ngx.INFO, "⬛️⬛️中间件before, start: ", location)
     go(self, 5)
     self[5] = nil
+    ngx.log(ngx.INFO, "⬛️⬛️中间件before,  end: ", location)
   end
-  go(self, 4)
+  ngx.log(ngx.INFO, "⬛️⬛️⬛️⬛️filter before,  start: ", location)
+  go(self, 4) -- filters
+  ngx.log(ngx.INFO, "⬛️⬛️⬛️⬛️filter before,  end: ", location)
   local named = self[3][location]
   if named then
     execute(self, 3, type(named) == "function" and create(named) or create(function(...) named(...) end))
   else
     ngx.log(ngx.INFO, "router:to: unnamed route: ", location)
-    go(self, 3)
+    go(self, 3) -- views 函数
   end
   self:fail(HTTP_404)
 end

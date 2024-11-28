@@ -211,7 +211,7 @@ end
 local function matcher(h, ...)
   if select(1, ...) then
     local co = create(h)
-    ngx.log(ngx.INFO, "matcher create coroutine: ", tostring(h))
+    ngx.log(ngx.INFO, "matcher create coroutine: ", tostring(h), ',', tostring(co))
     return co, ...
   end
 end
@@ -223,7 +223,7 @@ local function locator(l, m, p, f)
       local match, pattern, insensitive = resolve(p)
       l[n] = function(request_method, request_location)
         if m == request_method then
-          ngx.log(ngx.INFO, "locator create coroutine3: ", tostring(f))
+          ngx.log(ngx.INFO, pattern, "⬛️⬛️⬛️locator create coroutine for view2: ", tostring(f))
           return matcher(f, match(request_location, pattern, insensitive))
         end
       end
@@ -239,14 +239,15 @@ local function locator(l, m, p, f)
     -- 视图函数
     local match, pattern, insensitive = resolve(p)
     l[n] = function(_, request_location)
-      ngx.log(ngx.INFO, "locator create coroutine4: ", tostring(f))
+      ngx.log(ngx.INFO, pattern, "△⬛️⬛️⬛️locator create coroutine for view: ", tostring(f))
       return matcher(f, match(request_location, pattern, insensitive))
     end
   else
     -- 插件
     l[n] = function()
-      ngx.log(ngx.INFO, "locator create coroutine2: ", tostring(f))
-      return create(f)
+      local co = create(f)
+      ngx.log(ngx.INFO, "locator create coroutine2: ", tostring(f), ',', tostring(co))
+      return co
     end
   end
   return true
